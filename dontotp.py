@@ -4,12 +4,12 @@ from datetime import datetime
 import hashlib
 from pathlib import Path
 from time import sleep
+import tomllib
 from typing import TypedDict
 
 import colorama
 from colorama import Fore, Style
 import pyotp
-import toml
 
 
 class Account(TypedDict):
@@ -30,7 +30,7 @@ class Otp(TypedDict):
 def get_accounts() -> list[Account]:
     secrets_file = Path(__file__).parent.resolve() / 'secrets.toml'
     secrets_text = secrets_file.read_text(encoding='utf-8')
-    return toml.loads(secrets_text).get('accounts', [])
+    return tomllib.loads(secrets_text).get('accounts', [])
 
 
 def get_otp(a: Account) -> Otp:
