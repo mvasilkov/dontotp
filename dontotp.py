@@ -86,7 +86,7 @@ def run(watch=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--watch', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--watch', '-w', action=argparse.BooleanOptionalAction)
     args = parser.parse_args()
 
     colorama.init()
