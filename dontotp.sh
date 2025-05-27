@@ -10,4 +10,4 @@ while [ -L "$SOURCE" ]; do
 done
 SCRIPT_DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
 
-python3 "$SCRIPT_DIR/dontotp.py" "$@"
+"$SCRIPT_DIR/virtual/bin/python3" "$SCRIPT_DIR/dontotp.py" "$@"
